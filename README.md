@@ -26,4 +26,4 @@ Points to note:
  
 2. It assumes that the user uses the correct syntax when entering various commands.
 
-3. There is no user logins.
+3. There is no user login.
