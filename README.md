@@ -1,11 +1,11 @@
-Multithreaded FTP Client and Server in C Programming Language
+Multithreaded FTP Client and Server in C
 =============================================================
 
 The aim of this project is to introduce to you the design issues involved in multi-threaded servers. In this project, both the client and server are multithreaded. The client will be able to handle multiple commands (from same user) simultaneously and server should be able to handle multiple commands from multiple clients. The overall interaction between the user and the system is similar except as indicated below. The client and server will support a set of commands as indicated in the following: get, put, delete, ls, cd, mkdir, pwd, quit. In addition, they will support one more command called “terminate”, which is used for terminating a long-running command (e.g., get and put on large files) from the same client.
 
 The syntax of the terminate command is as follows:
 
-  terminate <command-ID> -- terminate the command identified by <command-ID> (see below for a description of command ID).
+terminate <command-ID> -- terminate the command identified by <command-ID> (see below for a description of command ID).
 
 The workings of the client and server are described below:
 
@@ -21,6 +21,9 @@ FTP Client: The ftp client program takes three command line parameters the machi
 
 
 Points to note:
+
 1. It assumes that each client has only one connection to the server through the normal port (this will avoid complications with respect to changing directories in one thread while other thread is operating in another directory). However, note that different clients can still concurrently connect to the server.
+ 
 2. It assumes that the user uses the correct syntax when entering various commands.
+
 3. There is no user logins.
